@@ -3,7 +3,7 @@ import java.util.HashMap;
 public class VacationCalculator
 {
     HashMap<Destination, Float> vacationMap = new HashMap<Destination, Float>();
-
+    // git  test
     float tallyExpenses(HashMap<Destination, Float> vacationMap)
     {
         this.vacationMap = vacationMap;
