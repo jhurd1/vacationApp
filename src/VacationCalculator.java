@@ -1,16 +1,25 @@
-import java.util.List;
+import java.util.HashMap;
 
 public class VacationCalculator
 {
-    float tallyExpenses() //requires hashMap, I think, as parameter, not list
+    HashMap<Destination, Float> vacationMap = new HashMap<Destination, Float>();
+
+    float tallyExpenses(HashMap<Destination, Float> vacationMap)
     {
-        //Cruise c = new Cruise();
-        /*if(d.equals(c))
+        this.vacationMap = vacationMap;
+        Destination d1 = Destination.Mexico;
+        Destination d2 = Destination.Europe;
+        Destination d3 = Destination.Japan;
+        if (vacationMap.equals(d1))
         {
-            return c;
-        }*/
-        float tE = 0.0F;
-        return tE;
+            return vacationMap.get(d1);
+        } else if (vacationMap.equals(d2))
+        {
+            return vacationMap.get(d2);
+        } else
+        {
+            return vacationMap.get(d3);
+        }
     }
 
     public float calculateVacationCost(Destination d)
