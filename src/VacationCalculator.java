@@ -2,24 +2,26 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Iterator;
 
-public class VacationCalculator
+public class VacationCalculator implements Expense
 {
-    Destination d1 = Destination.Mexico;
-    Destination d2 = Destination.Europe;
-    Destination d3 = Destination.Japan;
+    // Lines 8 - 10 permitted the passing of the values
+    // but we're getting the wrong value
+    Destination d;
+    Cruise c = new Cruise(d);
+    HashMap<Destination, Float> tempMap = c.getCost(d);
+
     private float totalCost = 0;
     private float addOn = 0;
-    HashMap<Destination, Float> vacationMap = new HashMap<Destination, Float>();
 
-    /*******************************
+    /***********************************
      * TALLYEXPENSES
      * @param vacationMap
      * @return totalCost
-     ******************************/
+     ***********************************/
     float tallyExpenses(HashMap<Destination, Float> vacationMap)
     {
         // tallyExpenses iterates across the hashMap
-        Iterator vacationIterator = vacationMap.entrySet().iterator();
+        Iterator vacationIterator = tempMap.entrySet().iterator();
 
         // Use the iterator to traverse the hashMap
         while (vacationIterator.hasNext())
@@ -42,10 +44,10 @@ public class VacationCalculator
     public float calculateVacationCost(Destination d)
     {
         // totalCost holds a call to tallyExpenses
-        totalCost = tallyExpenses(vacationMap);
+        totalCost = tallyExpenses(tempMap);
 
         // Put the destination and totalCost in the hashMap
-        vacationMap.put(d, totalCost);
+        tempMap.put(d, totalCost);
 
         // return the totalCost
         return totalCost;
