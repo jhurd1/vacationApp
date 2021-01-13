@@ -55,12 +55,12 @@ public class VacationCalculator implements Expense
 
     public static void main (String[] args)
     {
-        Destination d1 = Destination.Mexico;
-        Destination d2 = Destination.Europe;
-        Destination d3 = Destination.Japan;
-        Cruise c = new Cruise(d3);
+        // Line 60 appears to have pointed the program
+        // to the correct value
+        final Destination d = Destination.Japan;
+        Cruise c = new Cruise(d);
         VacationCalculator vc = new VacationCalculator();
-        float japanCost = vc.calculateVacationCost(d3);
+        float japanCost = vc.calculateVacationCost(d);
         System.out.format("The cost of a vacation to Japan comprises: %f%n", japanCost);
     }
 }
