@@ -2,10 +2,15 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Iterator;
 
+/********************************
+ * CLASS VACATIONCALCULATOR
+ ********************************/
 public class VacationCalculator implements Expense
 {
+    /****************************
+     * DATA MEMBERS
+     ***************************/
     // Lines 8 - 10 permitted the passing of the values
-    // but we're getting the wrong value
     Destination d;
     Cruise c = new Cruise(d);
     HashMap<Destination, Float> tempMap = c.getCost(d);
@@ -31,7 +36,7 @@ public class VacationCalculator implements Expense
             // Hold the values in addOn
             addOn = ((float)mapElement.getValue());
         }
-
+        
         // return and assign the totalCost to the addOn
         return totalCost += addOn;
     }
@@ -53,9 +58,12 @@ public class VacationCalculator implements Expense
         return totalCost;
     }
 
+    /****************************
+     * DRIVER (MAIN())
+     ***************************/
     public static void main (String[] args)
     {
-        // Line 60 appears to have pointed the program
+        // Line 60 pointed the program
         // to the correct value
         final Destination d = Destination.Japan;
         Cruise c = new Cruise(d);
