@@ -13,6 +13,13 @@ public class Dining implements Expense
      ***************************/
     HashMap<Destination, Float> dining = new HashMap <Destination, Float>();
     Destination d;
+
+    public int getNights()
+    {
+        calculateDining(d);
+        return nights;
+    }
+
     private int nights = 0;
     private float diningCost = 0.00F;
     /****************************
@@ -30,7 +37,7 @@ public class Dining implements Expense
     public float calculateDining (Destination d)
     {
         Scanner scan = new Scanner(System.in);
-        System.out.println("Number of nights: ");
+        System.out.print ("Number of nights: ");
         nights = scan.nextInt();
 
         dining.put(Destination.Mexico, 10.00F);

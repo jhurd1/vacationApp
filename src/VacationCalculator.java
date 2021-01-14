@@ -17,6 +17,10 @@ public class VacationCalculator implements Expense
 
     private float totalCost = 0;
     private float addOn = 0;
+    private int nights = 0;
+    private int days = 0;
+    Dining dine = new Dining(d, nights);
+    Lodging lodge = new Lodging(d, days);
 
     /***********************************
      * TALLYEXPENSES
@@ -55,7 +59,7 @@ public class VacationCalculator implements Expense
         tempMap.put(d, totalCost);
 
         // return the totalCost
-        return totalCost;
+        return totalCost + dine.getNights() + lodge.getDays();
     }
 
     /****************************

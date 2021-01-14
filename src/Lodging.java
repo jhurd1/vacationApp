@@ -18,10 +18,17 @@ public class Lodging implements Expense
     private float europeTotal = 200.0F;
     private float japanTotal = 300.0F;
     HashMap<Destination, Float> lodging = new HashMap <Destination, Float>();
+
+    public int getDays()
+    {
+        calculateLodging(d);
+        return days;
+    }
+
     /****************************
      * NON-DEFAULT CONSTRUCTOR
      ***************************/
-    Lodging (Destination d, int nights)
+    Lodging (Destination d, int days)
     {
         this.d = d;
         this.days = days;
@@ -32,7 +39,7 @@ public class Lodging implements Expense
     public float calculateLodging (Destination d)
     {
         Scanner scan = new Scanner(System.in);
-        System.out.println("Number of days: ");
+        System.out.print ("Number of days: ");
         days = scan.nextInt();
         europeTotal *= .1 + 200.00;
         japanTotal *= .3 + 300.00;
