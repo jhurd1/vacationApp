@@ -36,7 +36,7 @@ public class VacationCalculator implements Expense
             // Hold the values in addOn
             addOn = ((float)mapElement.getValue());
         }
-        
+
         // return and assign the totalCost to the addOn
         return totalCost += addOn;
     }
