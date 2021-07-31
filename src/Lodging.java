@@ -57,6 +57,6 @@ public class Lodging implements Expense
         }
 
         // return and assign the totalCost to the addOn
-        return lodgingCost += days;
+        return lodgingCost *= days;
     }
 }

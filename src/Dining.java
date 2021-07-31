@@ -53,6 +53,6 @@ public class Dining implements Expense
         }
 
         // return and assign the totalCost to the addOn
-        return diningCost += nights;
+        return diningCost *= nights;
     }
 }
